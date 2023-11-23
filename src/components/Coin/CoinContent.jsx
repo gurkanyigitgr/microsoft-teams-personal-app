@@ -36,11 +36,18 @@ export default function CoinContent() {
   const styles = useStyles();
   const coins = useSelector((state) => state.coins.coins.coins);
   const nfts = useSelector((state) => state.coins.nfts.nfts);
+  const currentTheme = useSelector((state) => state.theme.mode);
 
   return (
-    <div className='flex gap-5'>
-      <div className='flex flex-col items-center'>
-        <h2 className='text-4xl font-bold mb-16'>Coins</h2>
+    <div className='h-screen flex flex-col items-center md:flex-row gap-5 '>
+      <div className='flex flex-col'>
+        <h2
+          className={`text-4xl font-bold mb-8 ${
+            currentTheme === 'dark' ? 'text-white' : 'text-black'
+          }`}
+        >
+          Coins
+        </h2>
         <div className='md:grid md:grid-cols-2 gap-5'>
           {coins.map((coin, index) => (
             <Card key={index} className={styles.card} s>
@@ -54,8 +61,11 @@ export default function CoinContent() {
                 }
                 header={
                   <Text
-                    style={{ fontSize: '15px', color: '#fff' }}
-                    weight='semibold'
+                    style={{
+                      fontSize: '15px',
+                      color: '#fff',
+                      fontWeight: 'bold',
+                    }}
                   >
                     {coin.item.name}
                   </Text>
@@ -70,8 +80,15 @@ export default function CoinContent() {
           ))}
         </div>
       </div>
-      <div className='flex flex-col items-center'>
-        <h2 className='text-4xl font-bold mb-16'>NFTs</h2>
+      <div className='w-0 md:w-2' />
+      <div className='flex flex-col'>
+        <h2
+          className={`text-4xl font-bold mb-8 ${
+            currentTheme === 'dark' ? 'text-white' : 'text-black'
+          }`}
+        >
+          NFTs
+        </h2>
         <div className='md:grid md:grid-cols-2 gap-5'>
           {nfts.map((nft, index) => (
             <Card key={index} className={styles.card}>
@@ -85,8 +102,11 @@ export default function CoinContent() {
                 }
                 header={
                   <Text
-                    style={{ fontSize: '15px', color: '#fff' }}
-                    weight='semibold'
+                    style={{
+                      fontSize: '15px',
+                      color: '#fff',
+                      fontWeight: 'bold',
+                    }}
                   >
                     {nft.name}
                   </Text>

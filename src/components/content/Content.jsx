@@ -6,16 +6,12 @@ import CoinContent from '../Coin/CoinContent';
 
 const Content = () => {
   const activeTab = useSelector((state) => state.navigation.activeTab);
-  const coins = useSelector((state) => state.coins.coins.coins);
-  const nfts = useSelector((state) => state.coins.nfts.nfts);
-  console.log(nfts);
+
   return (
-    <div className='container mx-auto flex flex-col items-center justify-center'>
-      <div className='w-full'>
-        {activeTab === 'trivia' && <TriviaContent />}
-      </div>
-      <div>{activeTab === 'book' && <BookContent />}</div>
-      <div>{activeTab === 'coin' && <CoinContent />}</div>
+    <div className='container mx-auto px-4 sm:px-8 lg:px-16 xl:px-20 '>
+      {activeTab === 'trivia' && <TriviaContent />}
+      {activeTab === 'book' && <BookContent />}
+      {activeTab === 'coin' && <CoinContent />}
     </div>
   );
 };

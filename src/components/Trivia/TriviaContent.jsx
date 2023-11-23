@@ -20,6 +20,7 @@ export default function TriviaContent() {
   const triviaCategories = useSelector((state) => state.trivia.categories);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const currentTheme = useSelector((state) => state.theme.mode);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -31,8 +32,14 @@ export default function TriviaContent() {
   };
 
   return (
-    <div className='flex flex-col items-center w-full h-full'>
-      <h1 className='text-4xl font-bold mb-8 text-[#000]'>Trivia Categories</h1>
+    <div className='flex flex-col justify-center my-auto h-full'>
+      <h1
+        className={`text-4xl font-bold mb-8 ${
+          currentTheme === 'dark' ? 'text-white' : 'text-black'
+        } `}
+      >
+        Trivia Categories
+      </h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {triviaCategories.map((category) => (
           <div
@@ -40,8 +47,7 @@ export default function TriviaContent() {
             className='bg-[#272829] p-3.5 rounded-xl shadow-md text-white cursor-pointer hover:scale-105 duration-500 transition-all'
             onClick={() => handleCategoryClick(category)}
           >
-            <h2 className='text-xl font-semibold mb-2'>{category.name}</h2>
-            <p className='text-gray-300'>{category.description}</p>
+            <h2 className='text-md font-semibold mb-2'>{category.name}</h2>
           </div>
         ))}
       </div>
