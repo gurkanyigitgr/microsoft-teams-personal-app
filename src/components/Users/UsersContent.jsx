@@ -4,6 +4,7 @@ import { Avatar, Badge } from '@fluentui/react-components';
 
 export default function UsersContent() {
   const users = useSelector((state) => state.users.users);
+  const currentTheme = useSelector((state) => state.theme.mode);
 
   const markAvailable = (user) => {
     return {
@@ -23,7 +24,13 @@ export default function UsersContent() {
 
   return (
     <div className='container mx-auto w-full flex flex-col justify-center h-full'>
-      <h2 className='text-3xl font-bold mb-4'>Users</h2>
+      <h2
+        className={`text-3xl font-bold mb-4 ${
+          currentTheme === 'dark' ? 'text-white' : 'text-black'
+        }`}
+      >
+        Users
+      </h2>
       <div className='grid grid-cols-3 gap-4'>
         {allUsers.map((user) => (
           <div
