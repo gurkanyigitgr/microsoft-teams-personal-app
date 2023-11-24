@@ -47,7 +47,7 @@ export default function TriviaContent() {
             className='bg-[#272829] p-3.5 rounded-xl shadow-md text-white cursor-pointer hover:scale-105 duration-500 transition-all'
             onClick={() => handleCategoryClick(category)}
           >
-            <h2 className='text-md font-semibold mb-2'>{category.name}</h2>
+            <h2 className='text-md font-semibold'>{category.name}</h2>
           </div>
         ))}
       </div>

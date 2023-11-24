@@ -14,6 +14,7 @@ export default function Trivia() {
   useEffect(() => {
     dispatch(fetchTrivia());
   }, [dispatch]);
+
   const handleFetchTrivia = () => {
     dispatch(fetchTrivia());
   };

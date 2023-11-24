@@ -1,14 +1,6 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import {
-  makeStyles,
-  shorthands,
-  Button,
-  Caption1,
-  Text,
-  tokens,
-  Subtitle1,
-} from '@fluentui/react-components';
+import { makeStyles, shorthands, Text } from '@fluentui/react-components';
 import { Card, CardHeader } from '@fluentui/react-components';
 
 const useStyles = makeStyles({
