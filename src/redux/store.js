@@ -4,6 +4,8 @@ import bookReducer from './features/bookSlice';
 import navigationReducer from './features/navigationSlice';
 import coinReducer from './features/coinSlice';
 import themeReducer from './features/themeSlice';
+import usersReducer from './features/usersSlice';
+
 const store = configureStore({
   reducer: {
     trivia: triviaReducer,
@@ -11,6 +13,7 @@ const store = configureStore({
     navigation: navigationReducer,
     coins: coinReducer,
     theme: themeReducer,
+    users: usersReducer,
   },
 });
 export default store;
