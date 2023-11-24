@@ -15,12 +15,12 @@
     "outline": "outline.png"
   },
   "name": {
-    "short": "Piblo-Case-${{TEAMSFX_ENV}}",
+    "short": "Piblo",
     "full": "Full name for Piblo-Case"
   },
   "description": {
-    "short": "Short description of Piblo-Case",
-    "full": "Full description of Piblo-Case"
+    "short": "Short description of Piblo",
+    "full": "Full description of Piblo"
   },
   "accentColor": "#FFFFFF",
   "bots": [],
@@ -29,7 +29,7 @@
   "staticTabs": [
     {
       "entityId": "index",
-      "name": "Personal Tab",
+      "name": "Piblo",
       "contentUrl": "${{TAB_ENDPOINT}}/index.html#/tab",
       "websiteUrl": "${{TAB_ENDPOINT}}/index.html#/tab",
       "scopes": ["personal"]
